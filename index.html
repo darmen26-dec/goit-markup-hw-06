@@ -526,9 +526,9 @@
           </svg>
         </button>
         <!---------- MODAL WINDOW - FORMULA ---------->
-        <form>
+        <form name="order-our-services" autocomplete="on" class="formula-modal-window">
           <p class="form-name">Zostaw swoje dane w formularzu poniżej</p>
-          <!-- Imię -->
+          <!-- Name -->
           <label for="user-name" class="formula-headlines">Imię</label>
           <div class="formula-boxes"><svg
                 width="12px"
@@ -537,8 +537,8 @@
               >
                 <use href="./images/icons.svg#icon-person-mw"></use>
               </svg>
-          <input id="user-name" name="user-name" class="input-box"/></div>
-          <!-- Telefon -->
+          <input id="user-name" name="user-name" class="input-box" required/></div>
+          <!-- Phone -->
           <label for="user-phone" class="formula-headlines">Telefon</label>
           <div class="formula-boxes"><svg
                 width="13px"
@@ -547,7 +547,7 @@
               >
                 <use href="./images/icons.svg#icon-phone-mw"></use>
               </svg>
-          <input id="user-phone" name="user-phone" class="input-box"/></div>
+          <input id="user-phone" name="user-phone" class="input-box" required/></div>
           <!-- Email -->
           <label for="user-email" class="formula-headlines">Email</label>
           <div class="formula-boxes"><svg
@@ -557,22 +557,25 @@
               >
                 <use href="./images/icons.svg#icon-email-mw"></use>
               </svg>
-          <input id="user-email" name="user-email" class="input-box"/></div>
-          <!-- Komentarz -->
+          <input id="user-email" name="user-email" class="input-box" required/></div>
+          <!-- Comment -->
           <label for="user-comment" class="formula-headlines">Komentarz</label>
           <div class="formula-boxes">
-          <textarea id="user-comment" name="user-comment" placeholder="Wprowadź tekst" class="input-box-comment"></textarea></div>
+          <textarea id="user-comment" name="user-comment" placeholder="Wprowadź tekst" style="resize:none" class="input-box-comment"></textarea></div>
           <!-- Checkbox - agreements -->
-          <!-- <svg
-                width="11px"
-                height="18px"
-                class="checkbox-svg"
-              >
+          <div class="checkbox-label">
+            <label for="user-agreements"></label>
+              <input id="user-agreements" type="checkbox" name="user-agreements" class="formula-checkbox" required>
+              <!-- Unchecked -->
+              <svg class="svg-checkbox-frame" width="16px" height="15px">
+                <use href="./images/icons.svg#icon-checkbox-frame"></use>
+              </svg>
+              <!-- Checked -->
+              <svg class="svg-checkbox-tick" width="16px" height="15px">
                 <use href="./images/icons.svg#icon-checkbox"></use>
-              </svg> -->
-
-              <input id="user-agreements" type="checkbox" name="user-agreements" class="formula-checkbox">Oświadczam iż akceptuję Regulamin i Politykę Prywatności.</input>
-          <label for="user-agreements" class="formula-headlines"></label>
+              </svg>
+              <p class="checkbox-text">Oświadczam iż akceptuję <a href="#" class="checkbox-links">Regulamin</a> i <a href="#" class="checkbox-links">Politykę Prywatności.</a></p></input>
+          </div>
           <!-- Button -->
           <button type="submit" class="btn-formula">Wyślij</button>
         </form>

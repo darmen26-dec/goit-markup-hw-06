@@ -258,21 +258,91 @@ span {
   position: absolute;
   width: 18px;
   height: 18px;
-  margin-left: 15px;
-  margin-top: 14px;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 15px;
 }
 .input-box {
+  display: block; /* sprawia, że "ramki" nakładają się na siebie */
   border: 0;
-  width: 446px;
+  width: 100%;
   height: 40px;
   padding-left: 42px;
-  line-height: 18px;
+  font-size: 1.2rem;
 }
 .input-box-comment {
+  display: block; /* sprawia, że "ramki" nakładają się na siebie */
   border: 0;
-  width: 446px;
+  width: 100%;
   height: 120px;
   padding: 12px 16px;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+.input-box:focus,
+.input-box-comment:focus {
+  outline: 1px solid var(--selected-text);
+  border-radius: 4px;
+  transition-duration: var(--default-time);
+  transition-timing-function: var(--default-timing-function);
+}
+.formula-boxes:focus-within {
+  fill: var(--selected-text);
+  transition-duration: var(--default-time);
+  transition-timing-function: var(--default-timing-function);
+}
+.checkbox-label {
+  position: relative;
+  margin-left: 54px;
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  margin-top: 20px;
+}
+.svg-checkbox-frame {
+  position: absolute;
+  fill: var(--color-text);
+  transition-duration: var(--default-time);
+  transition-timing-function: var(--default-timing-function);
+  scale: 1;
+}
+.svg-checkbox-tick {
+  position: absolute;
+  visibility: hidden;
+  border-radius: 2px;
+  transition-duration: var(--default-time);
+  transition-timing-function: var(--default-timing-function);
+  scale: 0;
+}
+.formula-checkbox {
+  width: 16px;
+  height: 15px;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  z-index: 10;
+}
+.formula-checkbox:checked ~ .svg-checkbox-tick {
+  visibility: visible;
+  background-color: var(--selected-text);
+  fill: var(--color-text-secondary);
+  scale: 1;
+}
+.formula-checkbox:checked ~ .svg-checkbox-frame {
+  scale: 0;
+}
+.checkbox-text {
+  font-size: 1.4rem;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+  color: var(--color-text-info);
+  padding-left: 7px;
+  margin-block: 0;
+}
+.checkbox-links {
+  color: var(--selected-text);
 }
 .btn-formula {
   width: 200px;
@@ -287,8 +357,8 @@ span {
   line-height: 1.9;
   letter-spacing: 0.06em;
   margin-inline: 164px;
-  margin-bottom: 40px;
   margin-top: 30px;
+  margin-bottom: 40px;
 }
 /* ================================= WHAT WE DO SECTION =================================*/
 .description-main {

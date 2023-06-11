@@ -293,45 +293,34 @@ span {
   transition-duration: var(--default-time);
   transition-timing-function: var(--default-timing-function);
 }
+/* JESZCZE PRZEMYŚLEĆ CHECKBOXA */
+/* do tego  cofać */
 .checkbox-label {
-  position: relative;
-  margin-left: 54px;
   display: flex;
-  justify-content: baseline;
   align-items: center;
-  margin-top: 20px;
+  justify-content: center;
 }
-.svg-checkbox-frame {
+input[type="checkbox"] {
+  opacity: 0; /* ukrycie domyślnej ikonki */
   position: absolute;
-  fill: var(--color-text);
-  transition-duration: var(--default-time);
-  transition-timing-function: var(--default-timing-function);
-  scale: 1;
 }
-.svg-checkbox-tick {
-  position: absolute;
-  visibility: hidden;
-  border-radius: 2px;
-  transition-duration: var(--default-time);
-  transition-timing-function: var(--default-timing-function);
-  scale: 0;
-}
-.formula-checkbox {
+.checkbox-icon {
+  content: "";
+  position: relative;
   width: 16px;
   height: 15px;
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  z-index: 10;
+  border: 2px solid var(--color-text);
+  border-radius: 2px;
 }
-.formula-checkbox:checked ~ .svg-checkbox-tick {
-  visibility: visible;
-  background-color: var(--selected-text);
+.svg-checkbox-tick {
+  position: relative;
   fill: var(--color-text-secondary);
-  scale: 1;
+  width: 100%;
+  height: 100%;
 }
-.formula-checkbox:checked ~ .svg-checkbox-frame {
-  scale: 0;
+input[type="checkbox"]:checked + .checkbox-icon {
+  background-color: var(--selected-text);
+  border: var(--selected-text);
 }
 .checkbox-text {
   font-size: 1.4rem;
@@ -344,6 +333,10 @@ span {
 .checkbox-links {
   color: var(--selected-text);
 }
+
+/*
+checkbox koniec
+*/
 .btn-formula {
   width: 200px;
   height: 50px;

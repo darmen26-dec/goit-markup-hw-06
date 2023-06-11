@@ -313,8 +313,6 @@ input[type="checkbox"] {
   height: 15px;
   border: 2px solid var(--color-text);
   border-radius: 2px;
-  transition-duration: var(--default-time);
-  transition-timing-function: var(--default-timing-function);
 }
 .svg-checkbox-tick {
   position: relative;
